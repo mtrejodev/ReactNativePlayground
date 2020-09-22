@@ -10,7 +10,7 @@ storiesOf("Card", module)
     ))
     .add("default", () => (
         <Card
-            image={require("../images/charizard.jpg")}
+            image={require("../images/charizard.png")}
             text={"Charizard"}
             is_favorite={false}
             action={() => {
@@ -20,7 +20,7 @@ storiesOf("Card", module)
     ))
     .add("favorited", () => (
         <Card
-            image={require("../images/lugia.jpg")}
+            image={require("../images/lugia.png")}
             text={"Lugia"}
             is_favorite={true}
             action={() => {

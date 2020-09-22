@@ -1,7 +1,7 @@
 
 import React from "react";
 import { View } from "react-native";
-import IconButton from "../../src/components/IconButton";
+import IconButton from "../components/IconButton";
 import { storiesOf } from "@storybook/react-native";
 
 storiesOf("IconButton", module)
