@@ -8,6 +8,8 @@ target 'ReactNativePlayground' do
 
   use_react_native!(:path => config["reactNativePath"])
 
+  pod 'react-native-get-random-values', :path => '../node_modules/react-native-get-random-values'
+
   target 'ReactNativePlaygroundTests' do
     inherit! :complete
     # Pods for testing
