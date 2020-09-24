@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { favoritedCard } from "../actions";
 import Card from "./Card";
 
+
 const CardList = ({ cards, favoritedCard }) => {
 
     const renderCards = () => {
