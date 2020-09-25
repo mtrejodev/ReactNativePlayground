@@ -1,7 +1,7 @@
 
 // reducer.js
 
-import { FETCH_PRODUCTS_PENDING, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR } from '../actions';
+import { FETCH_PRODUCTS_PENDING, FETCH_PRODUCTS_SUCCESS, FETCH_PRODUCTS_ERROR } from '../actions/actions';
 import { combineReducers } from "redux";
 
 const initialState = {
@@ -13,6 +13,7 @@ const initialState = {
 const productsReducer = (state = initialState, action) => {
     switch (action.type) {
         case FETCH_PRODUCTS_PENDING:
+
             return {
                 ...state,
                 pending: true
@@ -20,16 +21,19 @@ const productsReducer = (state = initialState, action) => {
         case FETCH_PRODUCTS_SUCCESS:
             return {
                 ...state,
-                pending: false,
-                products: action.payload
+                pending: true,
+                ...action.payload
             }
+            
         case FETCH_PRODUCTS_ERROR:
+
             return {
                 ...state,
                 pending: false,
                 error: action.error
             }
         default:
+
             return state;
     }
 }

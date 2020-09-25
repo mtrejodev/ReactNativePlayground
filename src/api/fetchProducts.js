@@ -4,11 +4,13 @@ import { apolloClient } from "./Client"
 import { getPokemons } from './Queries'
 
 
-const fetchProducts = () => {
+const fetchPokemons = () => {
     return dispatch => {
         dispatch(fetchProductsPending());
         apolloClient.query({ query: getPokemons }).then(response => {
             console.log('REPONSE GRAPHQL', response.data.pokemon);
+            dispatch(fetchProductsSuccess(response.data.pokemon))
+            return response.data.pokemon;
         }).catch(error => {
             console.log('error', error)
             dispatch(fetchProductsError(error))
@@ -30,4 +32,4 @@ const fetchProducts = () => {
     }
 }
 
-export default fetchProducts;
+export default fetchPokemons;
