@@ -19,7 +19,7 @@ const stories = [
   '../src/stories/PokemonList.story',
 ];
 
-module.exports = {
+export default {
   loadStories,
   stories,
 };

@@ -1,14 +1,12 @@
-
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from "apollo-cache-inmemory";
-import { RestLink } from 'apollo-link-rest'
-
+import {ApolloClient} from 'apollo-client';
+import {InMemoryCache} from 'apollo-cache-inmemory';
+import {RestLink} from 'apollo-link-rest';
 
 const restLink = new RestLink({
   uri: 'https://pokeapi.co/api/v2/',
-})
+});
 
 export const apolloClient = new ApolloClient({
   link: restLink,
-  cache: new InMemoryCache()
-})
+  cache: new InMemoryCache(),
+});

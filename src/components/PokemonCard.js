@@ -1,41 +1,39 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { Button, Text, View, StyleSheet } from 'react-native'
+import React from 'react';
+import PropTypes from 'prop-types';
+import {Button, Text, View, StyleSheet} from 'react-native';
 
-export default PokemonCard = ({ pokemon, action }) => {
-    console.log('EACH CARD POKEMON', pokemon);
-    return (
-        <View style={styles.outterContainer}>
-            <View style={styles.cardContainer}>
+const PokemonCard = ({pokemon, action}) => {
+  console.log('EACH CARD POKEMON', pokemon);
+  return (
+    <View style={styles.outterContainer}>
+      <View style={styles.cardContainer}>
+        {pokemon && <Text>{pokemon.name}</Text>}
 
-                {
-                    pokemon && <Text>{pokemon.name}</Text>
-                }
-
-                <Button title="Click me" onPress={action} />
-            </View>
-        </View>
-    )
-}
+        <Button title="Click me" onPress={action} />
+      </View>
+    </View>
+  );
+};
 
 PokemonCard.propTypes = {
-    action: PropTypes.func.isRequired,
-    pokemon: PropTypes.object
-}
+  action: PropTypes.func.isRequired,
+  pokemon: PropTypes.object,
+};
 
 const styles = StyleSheet.create({
-    cardContainer: {
-        borderWidth: 1,
-        borderRadius: 8,
-        borderColor: "gray",
-        width: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        padding: 10
-    },
-    outterContainer: {
-        width: "33%",
-        padding: 5,
-    }
-})
+  cardContainer: {
+    borderWidth: 1,
+    borderRadius: 8,
+    borderColor: 'gray',
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+  },
+  outterContainer: {
+    width: '33%',
+    padding: 5,
+  },
+});
+
+export default PokemonCard;
