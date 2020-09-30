@@ -9,3 +9,11 @@ export const getPokemons = gql`
     }
   }
 `;
+
+export const getAnimes = gql`
+  query pokemonList {
+    pokemon @rest(type: "Pokemon List", path: "anime") {
+      meta
+    }
+  }
+`;

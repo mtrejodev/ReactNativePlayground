@@ -15,6 +15,7 @@ export function fetchProductsSuccess(products) {
     type: FETCH_PRODUCTS_SUCCESS,
     payload: {
       products: products,
+      error: null,
     },
   };
 }

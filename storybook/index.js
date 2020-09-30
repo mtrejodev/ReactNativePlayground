@@ -1,13 +1,13 @@
-import { AppRegistry } from 'react-native';
-import { getStorybookUI, configure } from '@storybook/react-native';
+import {AppRegistry} from 'react-native';
+import {getStorybookUI, configure} from '@storybook/react-native';
 import 'react-native-get-random-values';
-import { loadStories } from './storyLoader'
+import {loadStories} from './storyLoader';
 
 import './rn-addons';
 
 // import stories
 configure(() => {
-  loadStories()
+  loadStories();
 }, module);
 
 // Refer to https://github.com/storybookjs/storybook/tree/master/app/react-native#start-command-parameters

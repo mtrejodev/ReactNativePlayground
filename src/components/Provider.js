@@ -1,13 +1,12 @@
 import React from 'react';
 import {ScrollView} from 'react-native';
 import {Provider as ReduxProvider} from 'react-redux';
-import {createStore} from 'redux';
-import reducers from '../reducers';
 
 import PropTypes from 'prop-types';
 
-const store = createStore(reducers);
+import configureStore from '../api/store';
 
+const store = configureStore();
 const Provider = ({children}) => {
   return (
     <ReduxProvider store={store}>
@@ -19,6 +18,7 @@ const Provider = ({children}) => {
 const styles = {
   content: {
     alignItems: 'center',
+    backgroundColor: '#1F271B',
   },
 };
 

@@ -4,22 +4,18 @@
 // https://github.com/elderfo/react-native-storybook-loader.git
 
 function loadStories() {
-  require('../src/stories/Card.story');
-  require('../src/stories/CardList.story');
-  require('../src/stories/IconButton.story');
-  require('../src/stories/PokemonCard.story');
-  require('../src/stories/PokemonList.story');
+  require('../src/stories/AnimeCard.story');
+  require('../src/stories/CategorySection.story');
+  require('../src/stories/SectionList.story');
 }
 
 const stories = [
-  '../src/stories/Card.story',
-  '../src/stories/CardList.story',
-  '../src/stories/IconButton.story',
-  '../src/stories/PokemonCard.story',
-  '../src/stories/PokemonList.story',
+  '../src/stories/AnimeCard.story',
+  '../src/stories/CategorySection.story',
+  '../src/stories/SectionList.story',
 ];
 
-export default {
+module.exports = {
   loadStories,
   stories,
 };

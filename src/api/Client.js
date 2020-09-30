@@ -3,7 +3,7 @@ import {InMemoryCache} from 'apollo-cache-inmemory';
 import {RestLink} from 'apollo-link-rest';
 
 const restLink = new RestLink({
-  uri: 'https://pokeapi.co/api/v2/',
+  uri: 'https://kitsu.io/api/edge/',
 });
 
 export const apolloClient = new ApolloClient({

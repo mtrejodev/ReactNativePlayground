@@ -3,18 +3,17 @@ import {
   fetchProductsSuccess,
   fetchProductsError,
 } from '../actions/actions';
-import {apolloClient} from './Client';
-import {getPokemons} from './Queries';
+// import {apolloClient} from './Client';
+// import {getAnimes} from './Queries';
 
-const fetchPokemons = () => {
+export const fetchAnime = () => {
   return (dispatch) => {
     dispatch(fetchProductsPending());
-    apolloClient
-      .query({query: getPokemons})
-      .then((response) => {
-        console.log('REPONSE GRAPHQL', response.data.pokemon);
-        dispatch(fetchProductsSuccess(response.data.pokemon));
-        return response.data.pokemon;
+    fetch('https://kitsu.io/api/edge/categories')
+      .then((response) => response.json())
+      .then((data) => {
+        dispatch(fetchProductsSuccess(data.data));
+        return data;
       })
       .catch((error) => {
         console.log('error', error);
@@ -23,4 +22,13 @@ const fetchPokemons = () => {
   };
 };
 
-export default fetchPokemons;
+export const fetchAnimeContent = async (url) => {
+  try {
+    const response = await fetch(url);
+    const message = await response.json();
+    return message;
+  } catch (error) {
+    console.log('REPONSE ERROR', error);
+    return error;
+  }
+};
